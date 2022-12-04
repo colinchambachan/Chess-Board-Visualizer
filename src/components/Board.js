@@ -1,12 +1,6 @@
 import Square from "./Square.js";
+import "./Board.css";
 
 export default function Board() {
-  return (
-    <>
-      <Square></Square>
-      <Square></Square>
-      <Square></Square>
-      <Square></Square>
-    </>
-  );
+  return <div id="chessBoard"></div>;
 }
