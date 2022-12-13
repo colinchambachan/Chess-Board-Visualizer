@@ -8,8 +8,9 @@ function App() {
       <Helmet>
         <style>{"body{background-color: #312e2b;}"}</style>
       </Helmet>
-      <div>
-        <Board></Board>
+      <div>hello</div>
+      <div id="ChessboardDiv">
+        <Board />
       </div>
     </>
   );
