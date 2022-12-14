@@ -1,6 +1,6 @@
 import "./App.css";
 import { Helmet } from "react-helmet";
-import Board from "./components/Board.js";
+import Game from "./components/Game";
 
 function App() {
   return (
@@ -9,8 +9,9 @@ function App() {
         <style>{"body{background-color: #312e2b;}"}</style>
       </Helmet>
       <div>hello</div>
+
       <div id="ChessboardDiv">
-        <Board />
+        <Game />
       </div>
     </>
   );
