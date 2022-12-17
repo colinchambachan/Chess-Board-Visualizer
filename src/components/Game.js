@@ -21,8 +21,10 @@ function Game() {
 
   return (
     <>
-      <p>{squareIDArray}</p>
-      <Board props={{ squareIDArray, handleClick }} />
+      {/* // Todo: Delete tag, was used to test if array had values */}
+
+      {/* Current bug, board displays but not squares  */}
+      <Board squareIDArray={squareIDArray} handleClick={handleClick} />
     </>
   );
 }
