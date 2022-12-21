@@ -1,7 +1,13 @@
-.Square {
+.dark-square {
   width: 12.5%;
   height: 12.5%;
 
-  background-color: blue;
-  outline: 1px solid black;
+  background-color: #769656;
+}
+
+.light-square {
+  width: 12.5%;
+  height: 12.5%;
+
+  background-color: #edeed2;
 }

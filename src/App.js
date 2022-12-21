@@ -4,12 +4,12 @@ import Game from "./components/Game";
 function App() {
   return (
     <>
-      <div>hello</div>
-
-      <div id="ChessboardDiv">
-        {/* display game */}
-        <Game />
+      <div class="title-container">
+        <h1 id="Title">Chess Board Visualizer</h1>
       </div>
+
+      {/* display game */}
+      <Game />
     </>
   );
 }

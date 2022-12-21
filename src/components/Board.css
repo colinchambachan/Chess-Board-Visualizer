@@ -1,5 +1,11 @@
 #chess-board {
-  width: 500px;
-  height: 500px;
+  /* sizing */
+  width: 35%;
+  aspect-ratio: 1/1;
   background-color: #779556;
+
+  /* display flex to limit squares to 8 per  */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
