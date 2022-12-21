@@ -1,7 +1,7 @@
 .container {
   /* contanier for game board and direction screen */
   display: inline-flex;
-  width: 100vw;
+  width: 98vw;
 }
 
 #direction-screen {
@@ -14,9 +14,10 @@
 #instructions {
   flex: 0 1 32.5%;
   padding-left: 1em;
-  padding-right: 1em;
+
   justify-content: center;
   text-align: center;
   color: white;
   line-height: 1.5rem;
+  overflow: hidden;
 }
