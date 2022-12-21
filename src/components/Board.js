@@ -20,7 +20,6 @@ export default function Board({ squareIDArray, handleClick }) {
       output =
         squareIDList.indexOf(id) % 2 === 0 ? "dark-square" : "light-square";
     }
-    console.log(output);
     return output;
   };
 
@@ -28,7 +27,7 @@ export default function Board({ squareIDArray, handleClick }) {
   const boardSquares = squareIDList.map((squareID) => (
     <Square
       squareID={squareID}
-      onClick={handleClick}
+      handleClick={handleClick}
       squareColor={isDark(squareID)}
     />
   ));

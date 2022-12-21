@@ -1,6 +1,7 @@
 import React from "react";
 import Board from "./Board";
 import "./Game.css";
+import { useState } from "react";
 
 function Game() {
   // Create array for each individual square id
@@ -10,28 +11,42 @@ function Game() {
 
   for (let i = 0; i < 8; i++) {
     for (let j = 7; j >= 0; j--) {
+      // Concatenate width and height to create ID
       squareIDArray.push(idWidths[i] + idHeights[j]);
     }
   }
 
-  // Todo: Create handleClick function that runs game logic
+  // Game logic
+  const [score, setScore] = useState(0);
+  const [targetSquare, setTargetSquare] = useState(
+    squareIDArray[Math.floor(Math.random() * 63)]
+  );
+  const [output, setOutput] = useState("");
+  // function which increases score if correct square is clicked
   const handleClick = (id) => {
-    // handle game logic
-    alert(id);
+    if (id === targetSquare) {
+      setScore(score + 1);
+      setTargetSquare(squareIDArray[Math.floor(Math.random() * 63)]);
+      setOutput("Correct!");
+    } else {
+      setOutput("Incorrect :(");
+    }
   };
 
   return (
     <div class="container">
       <div id="direction-screen">
-        <h1>Select: </h1>
-        <h2>This square</h2>
+        <h1>Select: {targetSquare}</h1>
+        <h2>Score: {score} </h2>
+        <h2 id="output">{output}</h2>
       </div>
       <Board squareIDArray={squareIDArray} handleClick={handleClick} />
       <div id="instructions">
-        <h1>Instructions</h1>
-        <p>
+        <h1 id="Title">Instructions</h1>
+        <p id="Body">
           Welcome to the chess board visualizer! Ever wonder how GMs can
-          instantly recognize the position of square? Well now you can too!
+          instantly recognize the position of square? Practice of course! Soon
+          you'll be able to too!
         </p>
         <p>
           To play, click on the instructed square (found on the left) as fast as

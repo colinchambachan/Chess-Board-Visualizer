@@ -9,7 +9,7 @@ export default function Square({ squareID, handleClick, squareColor }) {
     <div
       id={squareID}
       className={squareColor}
-      onClick={() => alert(squareID)}
+      onClick={() => handleClick(squareID)}
     ></div>
   );
 }
