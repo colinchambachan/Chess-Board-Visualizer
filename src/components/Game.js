@@ -21,7 +21,7 @@ function Game() {
   const [targetSquare, setTargetSquare] = useState(
     squareIDArray[Math.floor(Math.random() * 63)]
   );
-  const [output, setOutput] = useState("");
+  const [output, setOutput] = useState("Click a square!");
   // function which increases score if correct square is clicked
   const handleClick = (id) => {
     if (id === targetSquare) {
@@ -38,6 +38,7 @@ function Game() {
       <div id="direction-screen">
         <h1>Select: {targetSquare}</h1>
         <h2>Score: {score} </h2>
+        <button onClick={() => setScore(0)}>Reset Score</button>
         <h2 id="output">{output}</h2>
       </div>
       <Board squareIDArray={squareIDArray} handleClick={handleClick} />
