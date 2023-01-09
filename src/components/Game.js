@@ -8,7 +8,6 @@ function Game() {
   const idWidths = ["a", "b", "c", "d", "e", "f", "g", "h"];
   const idHeights = ["1", "2", "3", "4", "5", "6", "7", "8"];
   const squareIDArray = [];
-
   for (let i = 0; i < 8; i++) {
     for (let j = 7; j >= 0; j--) {
       // Concatenate width and height to create ID
@@ -18,10 +17,12 @@ function Game() {
 
   // Game logic
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const [targetSquare, setTargetSquare] = useState(
     squareIDArray[Math.floor(Math.random() * 63)]
   );
   const [output, setOutput] = useState("Click a square!");
+
   // function which increases score if correct square is clicked
   const handleClick = (id) => {
     if (id === targetSquare) {
@@ -29,6 +30,10 @@ function Game() {
       setTargetSquare(squareIDArray[Math.floor(Math.random() * 63)]);
       setOutput("Correct!");
     } else {
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setScore(0);
       setOutput("Incorrect :(");
     }
   };
@@ -38,7 +43,8 @@ function Game() {
       <div id="direction-screen">
         <h1>Select: {targetSquare}</h1>
         <h2>Score: {score} </h2>
-        <button onClick={() => setScore(0)}>Reset Score</button>
+        <h3>High score: {highScore}</h3>
+        <button onClick={() => setHighScore(0)}>Reset High Score</button>
         <h2 id="output">{output}</h2>
       </div>
       <Board squareIDArray={squareIDArray} handleClick={handleClick} />
