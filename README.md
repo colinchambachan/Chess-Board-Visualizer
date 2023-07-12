@@ -7,5 +7,5 @@ Created to build basic understanding of React.js
 ## What I learned:
 
 - How to create and implement components
-- Updating data using useState()
+- Foundtional hooks
 - Using props to move data around
